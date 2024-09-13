@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#fps {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 10; /* Ensure the FPS label is above the canvas */
+}
+
+#windmill-speed {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    text-align: center;
+    width: 120px; /* Adjust width as needed */
+    z-index: 10; /* Ensure the input is above the canvas */
+}
+
+#windmill-speed:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.8);
+}

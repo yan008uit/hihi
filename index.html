@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Village</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+<div id="fps">FPS: 0</div>
+<canvas id="canvas"></canvas>
+<input type="number" id="windmill-speed" min="0" step="1" value="90">
+
+<script src="./lib/gl-matrix.js"></script>
+<script type="module" src="./lib/cuon-matrix.js"></script>
+<script type="module" src="./helpers/WebGLCanvas.js"></script>
+<script type="module" src="./helpers/WebGLShader.js"></script>
+<script type="module" src="./helpers/Camera.js"></script>
+<script type="module" src="./shapes/Coords.js"></script>
+<script type="module" src="./shapes/Cube.js"></script>
+<script type="module" src="./MiniVillageApp.js"></script>
+<script type="module">
+    // Initialize the MiniVillageApp
+    import { MiniVillageApp } from "./MiniVillageApp.js";
+    const app = new MiniVillageApp();
+    app.animate(performance.now());
+
+    // Set up windmill speed input event
+    document.getElementById('windmill-speed').addEventListener('input', (event) => {
+        const newSpeed = parseFloat(event.target.value);
+        if (!isNaN(newSpeed)) {
+            app.setWindmillSpeed(newSpeed);
+        }
+    });
+</script>
+</body>
+</html>
